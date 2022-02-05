@@ -5,6 +5,7 @@ import axios from "axios";
 function Explore() {
   const [user, setUser] = React.useState([]);
   const [posts, setPosts] = React.useState([]);
+  const [commentCount, setCommentCount] = React.useState(0);
   const [loading, setLoading] = React.useState(true);
   const [error, setError] = React.useState(null);
 
@@ -12,7 +13,8 @@ function Explore() {
     axios
       .get("https://jsonplaceholder.typicode.com/users")
       .then((res) => {
-        setUser(res.data);
+        let shuffleUsers = res.data.sort(() => Math.random() - 0.5);
+        setUser(shuffleUsers);
         setLoading(false);
       })
       .catch((error) => {
@@ -22,7 +24,8 @@ function Explore() {
     axios
       .get("https://jsonplaceholder.typicode.com/posts")
       .then((res) => {
-        setPosts(res.data);
+        let shuffleArray = res.data.sort(() => Math.random() - 0.5);
+        setPosts(shuffleArray);
         setLoading(false);
       })
       .catch((error) => {
@@ -40,7 +43,12 @@ function Explore() {
           {user.map((item) =>
             posts.map((post) =>
               item.id === post.userId ? (
-                <Posts key={post.id} user={item} post={post} />
+                <Posts
+                  key={post.id}
+                  user={item}
+                  post={post}
+                  commentCount={commentCount}
+                />
               ) : null
             )
           )}
