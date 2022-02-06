@@ -1,6 +1,5 @@
 import axios from "axios";
 import React from "react";
-import { FaExpandArrowsAlt, FaArrowCircleUp } from "react-icons/fa";
 import Comment from "./Comment.jsx";
 
 function User(props) {
