@@ -31,7 +31,7 @@ function User(props) {
       <div className="flex flex-row justify-between w-full">
         <div className="shrink-0 float-left">
           <img
-            className="h-16 w-16 rounded-full border border-gray-100 shadow-sm object-top"
+            className="h-16 w-16 rounded-full border border-gray-100 shadow-sm object-cover"
             src={
               props.user.id % 5 === 0
                 ? `../img/empty.png`
