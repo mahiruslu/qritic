@@ -1,5 +1,5 @@
 import React from "react";
-import Posts from "../Components/Posts.jsx";
+import Post from "../Components/Post.jsx";
 import axios from "axios";
 
 function Explore() {
@@ -40,10 +40,10 @@ function Explore() {
         <div className="flex justify-center items-center">Loading...</div>
       ) : (
         <div className="flex flex-wrap">
-          {user.map((item) =>
-            posts.map((post) =>
+          {posts.map((post) =>
+            user.map((item) =>
               item.id === post.userId ? (
-                <Posts
+                <Post
                   key={post.id}
                   user={item}
                   post={post}
