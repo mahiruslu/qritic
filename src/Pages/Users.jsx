@@ -20,7 +20,7 @@ function Users() {
       {loading ? (
         <div className="flex justify-center items-center">Loading...</div>
       ) : (
-        <div className="flex flex-wrap m-5">
+        <div className="flex flex-wrap m-5 items-center justify-center">
           {user.map((item) => (
             <User key={item.id} user={item} />
           ))}

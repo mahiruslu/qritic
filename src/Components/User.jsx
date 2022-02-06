@@ -10,7 +10,9 @@ function User(props) {
       setPosts([]);
     } else {
       axios
-        .get(`https://jsonplaceholder.typicode.com/posts/${props.user.id}`)
+        .get(
+          `https://jsonplaceholder.typicode.com/posts?userId=${props.user.id}`
+        )
         .then((res) => {
           setPosts([]);
           setPosts(res.data);
@@ -24,7 +26,7 @@ function User(props) {
 
   return (
     <div
-      className="p-1 mb-5 max-w-full w-full md:w-1/3 mx-auto bg-white rounded-xl shadow-lg flex flex-col items-center m-5 cursor-pointer"
+      className="p-1 mb-5 max-w-full w-full md:w-1/3 md:m-5 md:items-center md:justify-center mx-auto bg-white rounded-xl shadow-lg flex flex-col items-center m-5 cursor-pointer"
       onClick={getPosts}
     >
       <div className="flex flex-row justify-between w-full">
