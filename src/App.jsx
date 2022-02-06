@@ -3,6 +3,8 @@ import Navbar from "./Components/Navbar";
 import Explore from "./Pages/Explore.jsx";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Users from "./Pages/Users";
+import Posts from "./Pages/Posts";
+import Home from "./Pages/Home";
 
 function App() {
   return (
@@ -11,9 +13,9 @@ function App() {
         <Navbar />
         <div className="mt-20">
           <Routes>
-            <Route path="/" element={<p>Seems like empty here</p>} />
+            <Route path="/" element={<Home />} />
             <Route path="/users" element={<Users />} />
-            <Route path="/user/posts/:id" element={<p>Details shows here</p>} />
+            <Route path="/user/posts/:id" element={<Posts />} />
             <Route path="/explore" element={<Explore />} />
             <Route path="/account" element={<p>Account</p>} />
           </Routes>

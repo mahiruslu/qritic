@@ -5,13 +5,13 @@ import {
   FaArrowDown,
   FaComment,
   FaArrowCircleUp,
+  FaShare,
 } from "react-icons/fa";
 import Comment from "./Comment.jsx";
 
 function Post(props) {
   const [comments, setComments] = React.useState([]);
-  const [upvote, setUpvote] = React.useState(7);
-  const [downvote, setDownvote] = React.useState(5);
+  const [vote, setVote] = React.useState(7);
   const getComments = () => {
     if (comments.length > 0) {
       setComments([]);
@@ -38,10 +38,10 @@ function Post(props) {
             className="h-16 w-16 rounded-full border border-gray-100 shadow-sm object-cover"
             src={
               props.user.id % 5 === 0
-                ? `../img/empty.png`
-                : `../img/${props.user.id % 5}.jpg`
+                ? `../../img/empty.png`
+                : `../../img/${props.user.id % 5}.jpg`
             }
-            alt="Mahir"
+            alt=""
           />
         </div>
         <div className="flex flex-col flex-1 justify-center content-center pl-5">
@@ -64,22 +64,29 @@ function Post(props) {
           <div className="flex text-green-600 justify-start">
             <button
               className="text-green-600 flex"
-              onClick={() => setUpvote(upvote + 1)}
+              onClick={() => setVote(vote + 1)}
             >
-              <FaArrowUp /> <span className="text-gray-600 pl-1">{upvote}</span>
+              <FaArrowUp />
             </button>
           </div>
-          <div className="ml-2 flex text-red-600">
+          <span className="text-gray-600 pl-1">{vote}</span>
+          <div className="pl-1 flex text-red-600">
             <button
               className="text-red-600 flex"
-              onClick={() => setDownvote(downvote - 1)}
+              onClick={() => setVote(vote === 0 ? 0 : vote - 1)}
             >
-              <FaArrowDown />{" "}
-              <span className="text-gray-600 pl-1">{downvote}</span>
+              <FaArrowDown />
             </button>
           </div>
           <button className="ml-2 text-gray-600 flex" onClick={getComments}>
             <FaComment /> <span className="text-gray-600 pl-1">5</span>
+          </button>
+
+          <button
+            className="ml-2 text-gray-600 flex"
+            onClick={() => Navigator.share(1)}
+          >
+            <FaShare />
           </button>
         </div>
         <div className="flex justify-end items-start w-full p-2 mt-2">
