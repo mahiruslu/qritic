@@ -1,7 +1,7 @@
 import React from "react";
 import Post from "../Components/Post.jsx";
 import axios from "axios";
-
+import Loader from "../Components/Loader.jsx";
 function Explore() {
   const [user, setUser] = React.useState([]);
   const [posts, setPosts] = React.useState([]);
@@ -37,7 +37,9 @@ function Explore() {
   return (
     <div>
       {loading ? (
-        <div className="flex justify-center items-center">Loading...</div>
+        <div className="flex justify-center items-center">
+          <Loader />
+        </div>
       ) : (
         <div className="flex flex-wrap">
           {posts.map((post) =>

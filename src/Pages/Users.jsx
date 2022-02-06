@@ -1,6 +1,8 @@
 import React from "react";
 import User from "../Components/User.jsx";
 import axios from "axios";
+import { Link } from "react-router-dom";
+import Loader from "../Components/Loader.jsx";
 
 function Users() {
   const [user, setUser] = React.useState([]);
@@ -18,7 +20,9 @@ function Users() {
   return (
     <div>
       {loading ? (
-        <div className="flex justify-center items-center">Loading...</div>
+        <div className="flex justify-center items-center">
+          <Loader />
+        </div>
       ) : (
         <div className="flex flex-wrap m-5 items-center justify-center">
           {user.map((item) => (

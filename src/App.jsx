@@ -13,6 +13,7 @@ function App() {
           <Routes>
             <Route path="/" element={<p>Seems like empty here</p>} />
             <Route path="/users" element={<Users />} />
+            <Route path="/user/posts/:id" element={<p>Details shows here</p>} />
             <Route path="/explore" element={<Explore />} />
             <Route path="/account" element={<p>Account</p>} />
           </Routes>
