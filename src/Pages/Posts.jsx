@@ -1,7 +1,7 @@
 import React from "react";
-import Post from "../Components/Post.jsx";
+import Post from "../components/Post.jsx";
 import axios from "axios";
-import Loader from "../Components/Loader.jsx";
+import Loader from "../components/Loader.jsx";
 
 import { useParams } from "react-router-dom";
 

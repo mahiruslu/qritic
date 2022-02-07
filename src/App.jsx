@@ -1,10 +1,11 @@
 import "./App.css";
-import Navbar from "./Components/Navbar";
-import Explore from "./Pages/Explore.jsx";
+import Navbar from "./components/Navbar";
+import Explore from "./pages/Explore.jsx";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Users from "./Pages/Users";
-import Posts from "./Pages/Posts";
-import Home from "./Pages/Home";
+import Users from "./pages/Users";
+import Posts from "./pages/Posts";
+import Home from "./pages/Home";
+import Account from "./pages/Account";
 
 function App() {
   return (
@@ -17,7 +18,7 @@ function App() {
             <Route path="/users" element={<Users />} />
             <Route path="/user/posts/:id" element={<Posts />} />
             <Route path="/explore" element={<Explore />} />
-            <Route path="/account" element={<p>Account</p>} />
+            <Route path="/account" element={<Account />} />
           </Routes>
         </div>
       </div>
