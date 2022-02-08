@@ -1,11 +1,11 @@
 import "./App.css";
-import Navbar from "./components/Navbar.jsx";
-import Explore from "./pages/Explore.jsx";
+import Navbar from "./Components/Navbar.jsx";
+import Explore from "./Pages/Explore.jsx";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Users from "./pages/Users";
-import Posts from "./pages/Posts";
-import Home from "./pages/Home";
-import Account from "./pages/Account";
+import Users from "./Pages/Users";
+import Posts from "./Pages/Posts";
+import Home from "./Pages/Home";
+import Account from "./Pages/Account";
 
 function App() {
   return (

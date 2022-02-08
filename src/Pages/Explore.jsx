@@ -1,7 +1,7 @@
 import React from "react";
-import Post from "../components/Post.jsx";
+import Post from "../Components/Post.jsx";
 import axios from "axios";
-import Loader from "../components/Loader.jsx";
+import Loader from "../Components/Loader.jsx";
 function Explore() {
   const [user, setUser] = React.useState([]);
   const [posts, setPosts] = React.useState([]);

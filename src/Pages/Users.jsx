@@ -1,8 +1,8 @@
 import React from "react";
-import User from "../components/User.jsx";
+import User from "../Components/User.jsx";
 import axios from "axios";
 import { Link } from "react-router-dom";
-import Loader from "../components/Loader.jsx";
+import Loader from "../Components/Loader.jsx";
 
 function Users() {
   const [user, setUser] = React.useState([]);
