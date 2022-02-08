@@ -1,5 +1,5 @@
 import "./App.css";
-import Navbar from "./components/Navbar";
+import Navbar from "./components/Navbar.jsx";
 import Explore from "./pages/Explore.jsx";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Users from "./pages/Users";
